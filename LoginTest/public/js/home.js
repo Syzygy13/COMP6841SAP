@@ -2,7 +2,7 @@ const greeting = document.querySelector('.greeting');
 
 window.onload = () => {
     if (!sessionStorage.email) {
-        location.href = '/login.html';
+        location.href = '/login';
     } else {
         greeting.innerHTML= `welcome`;
     }
