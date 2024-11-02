@@ -11,9 +11,9 @@ const returnBtn = document.querySelector('.return-btn');
 const nextBtn = document.querySelector('.next-btn');
 
 returnBtn.onclick = () => {
-    location.href = '/learning2';
+    location.href = '/COMP6841SAP/LoginTest/public/learning2.html';
 }
 
 nextBtn.onclick = () => {
-    location.href = '/learning4';
+    location.href = '/COMP6841SAP/LoginTest/public/learning4.html';
 }

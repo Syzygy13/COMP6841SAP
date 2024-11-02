@@ -10,7 +10,7 @@ form.forEach((item, i) => {
 const returnBtn = document.querySelector('.return-btn');
 
 returnBtn.onclick = () => {
-    location.href = '/';
+    location.href = '/COMP6841SAP/LoginTest/public/index.html';
 }
 
 // form validation
@@ -39,7 +39,7 @@ const validateData = (data) => {
         alertBox(data);
     } else {
         sessionStorage.email = data;
-        location.href = '/';
+        location.href = '/COMP6841SAP/LoginTest/public/index.html';
     }
 }
 

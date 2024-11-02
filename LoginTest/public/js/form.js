@@ -9,7 +9,7 @@ form.forEach((item, i) => {
 
 window.onload = () => {
     if (sessionStorage.username) {
-        location.href = '/';
+        location.href = '/COMP6841SAP/LoginTest/public/index.html';
     }
 }
 
@@ -58,7 +58,7 @@ const validateData = (data) => {
     } else {
         sessionStorage.username = data.username;
         sessionStorage.email = data.email;
-        location.href = '/';
+        location.href = '/COMP6841SAP/LoginTest/public/index.html';
     }
 }
 

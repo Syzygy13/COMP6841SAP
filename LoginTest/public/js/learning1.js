@@ -15,5 +15,5 @@ returnBtn.onclick = () => {
 }
 
 nextBtn.onclick = () => {
-    location.href = '/learning2';
+    location.href = '/COMP6841SAP/LoginTest/public/learning2.html';
 }
