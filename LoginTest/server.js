@@ -21,51 +21,51 @@ app.use(bodyParser.json());
 app.use(express.static(initialPath));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(initialPath, "index.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/index.html"));
 });
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(initialPath, "login.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/login.html"));
 });
 
 app.get('/register', (req, res) => {
-    res.sendFile(path.join(initialPath, "register.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/register.html"));
 });
 
 app.get('/learning1', (req, res) => {
-    res.sendFile(path.join(initialPath, "learning1.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/learning1.html"));
 });
 
 app.get('/learning2', (req, res) => {
-    res.sendFile(path.join(initialPath, "learning2.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/learning2.html"));
 });
 
 app.get('/learning3', (req, res) => {
-    res.sendFile(path.join(initialPath, "learning3.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/learning3.html"));
 });
 
 app.get('/learning4', (req, res) => {
-    res.sendFile(path.join(initialPath, "learning4.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/learning4.html"));
 });
 
 app.get('/learning5', (req, res) => {
-    res.sendFile(path.join(initialPath, "learning5.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/learning5.html"));
 });
 
 app.get('/level1', (req, res) => {
-    res.sendFile(path.join(initialPath, "level1.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/level1.html"));
 });
 
 app.get('/level2', (req, res) => {
-    res.sendFile(path.join(initialPath, "level2.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/level2.html"));
 });
 
 app.get('/level3', (req, res) => {
-    res.sendFile(path.join(initialPath, "level3.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/level3.html"));
 });
 
 app.get('/level4', (req, res) => {
-    res.sendFile(path.join(initialPath, "level4.html"));
+    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/level4.html"));
 });
 
 app.post('/register-user', (req, res) => {

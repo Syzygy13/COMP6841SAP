@@ -2,7 +2,7 @@ const greeting = document.querySelector('.greeting');
 
 window.onload = () => {
     if (!sessionStorage.email) {
-        location.href = '/login';
+        location.href = 'COMP6841SAP/LoginTest/public/login';
     } else {
         greeting.innerHTML= `welcome`;
     }
