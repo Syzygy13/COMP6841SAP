@@ -12,7 +12,7 @@ const logOut = document.querySelector('.logout');
 
 logOut.onclick = () => {
     sessionStorage.clear();
-    location.href = '/login'
+    location.href = 'COMP6841SAP/LoginTest/public/login'
 }
 
 // Dropdown functionality

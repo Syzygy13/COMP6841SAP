@@ -9,7 +9,7 @@ form.forEach((item, i) => {
 
 window.onload = () => {
     if (sessionStorage.username) {
-        location.href = '/';
+        location.href = 'COMP6841SAP/LoginTest/public/index.html';
     }
 }
 
