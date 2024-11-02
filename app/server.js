@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(express.static(initialPath));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/index.html"));
+    res.sendFile(path.join(initialPath, "index.html"));
     console.log(initialPath)
 });
 
