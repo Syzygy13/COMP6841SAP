@@ -11,7 +11,7 @@ const returnBtn = document.querySelector('.return-btn');
 const nextBtn = document.querySelector('.next-btn');
 
 returnBtn.onclick = () => {
-    location.href = '/';
+    location.href = 'COMP6841SAP/LoginTest/public/index.html';
 }
 
 nextBtn.onclick = () => {
