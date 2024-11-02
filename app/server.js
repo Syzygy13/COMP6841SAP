@@ -5,16 +5,13 @@ const knex = require('knex');
 
 const db = knex({
     client: 'pg',
-    connection: process.env.DATABASE_URL
-})
-
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false, // This disables strict SSL verification
-  },
-});
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false, // This disables strict SSL verification
+      },
+    },
+  });
 
 const app = express();
 
