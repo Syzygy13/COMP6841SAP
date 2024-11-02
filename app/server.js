@@ -27,8 +27,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/login.html"));
-    console.log(initialPath)
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
 app.get('/register', (req, res) => {
