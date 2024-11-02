@@ -24,7 +24,7 @@ let initialPath = path.join(__dirname, "public");
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/public/index.html'));
+    res.sendFile(path.join('', 'index.html'));
 });
 
 app.get('/login', (req, res) => {
