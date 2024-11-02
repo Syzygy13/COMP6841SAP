@@ -10,15 +10,8 @@ const db = knex({
 
 const app = express();
 
-// let initialPath = path.join(__dirname, "public");
-
-// app.use(bodyParser.json());
-// app.use(express.static(initialPath));
-
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/index.html"));
-//     console.log(initialPath)
-// });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
