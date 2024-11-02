@@ -10,7 +10,7 @@ const db = knex({
 
 const app = express();
 
-let initialPath = path.join(__dirname, "public");
+// let initialPath = path.join(__dirname, "public");
 
 // app.use(bodyParser.json());
 // app.use(express.static(initialPath));
@@ -20,11 +20,10 @@ let initialPath = path.join(__dirname, "public");
 //     console.log(initialPath)
 // });
 
-// Serve static files from the 'public' folder in the 'app' directory
-app.use(express.static(path.join(__dirname, 'app/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join('', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/login', (req, res) => {
