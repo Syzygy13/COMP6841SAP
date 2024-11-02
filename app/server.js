@@ -12,12 +12,19 @@ const app = express();
 
 let initialPath = path.join(__dirname, "public");
 
-app.use(bodyParser.json());
-app.use(express.static(initialPath));
+// app.use(bodyParser.json());
+// app.use(express.static(initialPath));
+
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/index.html"));
+//     console.log(initialPath)
+// });
+
+// Serve static files from the 'public' folder in the 'app' directory
+app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(initialPath, "index.html"));
-    console.log(initialPath)
+    res.sendFile(path.join(__dirname, 'app/public/index.html'));
 });
 
 app.get('/login', (req, res) => {
