@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(initialPath, "COMP6841SAP/LoginTest/public/login.html"));
+    res.sendFile(path.join("COMP6841SAP/LoginTest/public/login.html"));
     console.log(initialPath)
 });
 
