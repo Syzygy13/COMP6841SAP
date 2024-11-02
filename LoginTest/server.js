@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(express.static(initialPath));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(initialPath, "home.html"));
+    res.sendFile(path.join(initialPath, "index.html"));
 });
 
 app.get('/login', (req, res) => {
