@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html=lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <div class="container">
+        <button class="logout">Log out</button>
+        <h1 class="greeting"></h1>
+        <div class="rules">Rules
+            <br><br>Go through the levels in order! They contain spoilers for future levels.
+            <br><br>When constructing your SQL injection ensure that any non-alphanumeric character has no spaces next to it.
+            <br><br>The password box is not required for any injections.
+        </div>
+        <div class="dropdown-level">
+            <button class="dropdown-btn-level">
+                <span>Levels</span>
+                <span class="arrow-level"></span>
+            </button>
+            <ul class="dropdown-content-level">
+                <li><a href="/level1">Level 1</a></li>
+                <li><a href="/level2">Level 2</a></li>
+                <li><a href="/level3">Level 3</a></li>
+                <li><a href="/level4">Level 4</a></li>
+            </ul>
+        </div>
+        <div class="dropdown-learn">
+            <button class="dropdown-btn-learn">
+                <span>Lessons</span>
+                <span class="arrow-learn"></span>
+            </button>
+            <ul class="dropdown-content-learn">
+                <li><a href="/learning1">Tautology Attack</a></li>
+                <li><a href="/learning2">Union Queries Attack</a></li>
+                <li><a href="/learning3">Piggy-Backed Attack</a></li>
+                <li><a href="/learning4">Timing Attack</a></li>
+                <li><a href="/learning5">Blind SQL Injection Attack</a></li>
+            </ul>
+        </div>
+    </div>
+
+<script src="js/home.js"></script>
+
+</body>

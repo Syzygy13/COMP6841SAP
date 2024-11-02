@@ -1,0 +1,3 @@
+SELECT * FROM users;
+SELECT * FROM level1;
+DELETE FROM level1 WHERE id = 26;
