@@ -81,17 +81,15 @@ app.get('/level4', (req, res) => {
 
 app.post('/register-user', (req, res) => {
     const { username, email, password } = req.body;
-    const salt = crypto.randomBytes(16).toString('hex');
-    const hashedPassword = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
 
     if (!username.length || !email.length || !password.length) {
         res.json('fill all the fields');
     } else {
+        const hash = crypto.createHash('sha256').update(password).digest('hex');
         db("users").insert({
             username: username,
             email: email,
-            password: hashedPassword,
-            salt:salt,
+            password: hash,
         })
         .returning(["username", "email"])
         .then(data => {
@@ -107,32 +105,24 @@ app.post('/register-user', (req, res) => {
 app.post('/login-user', (req, res) => {
     const { email, password } = req.body;
 
+    if (!email || !password) {
+        res.json('Fill all the fields');
+        return;
+    }
+
+    const hash = crypto.createHash('sha256').update(password).digest('hex');
+
     db.select('username', 'email', 'password', 'salt')
     .from("users")
     .where({
         email: email,
-        password: password
+        password: hash
     })
     .then(data => {
         if (data.length) {
-            const { password: storedHashedPassword, salt } = data[0]; // Get the hashed password and salt from the database
-
-            // Hash the input password using the stored salt
-            const inputHashedPassword = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
-
-            // Check if the hashed input password matches the stored hashed password
-            if (inputHashedPassword === storedHashedPassword) {
-                // Passwords match
-                res.json({
-                    username: data[0].username,
-                    email: data[0].email
-                });
-            } else {
-                // Passwords don't match
-                res.json('email or password is incorrect');
-            }
+            res.json(data[0]);
         } else {
-            res.json('email or password is incorrect');
+            res.json('Email or password is incorrect');
         }
     })
 });
