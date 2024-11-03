@@ -113,8 +113,10 @@ app.post('/login-level-1', async (req, res) => {
 
     email = String(email).replace(/\s*/g, '').toLowerCase();
     password = String(password).replace(/\s*/g, '').toLowerCase();
-    email = String(email).replace(`"`, `'`).toLowerCase();
-    password = String(password).replace(`"`, `'`).toLowerCase();
+    while (email.includes('"') || password.includes('"')) {
+        email = String(email).replace(`"`, `'`).toLowerCase();
+        password = String(password).replace(`"`, `'`).toLowerCase();
+    }
 
     const emailParts = email.split("'");
     const passwordParts = password.split("'");
@@ -178,10 +180,12 @@ app.post('/login-level-2', async (req, res) => {
     const allowed = "'or'1'='1'--";
     email = String(email).replace(/\s*/g, '').toLowerCase();
     password = String(password).replace(/\s*/g, '').toLowerCase();
-    email = String(email).replace(`"`, `'`).toLowerCase();
-    password = String(password).replace(`"`, `'`).toLowerCase();
     email = email.replace("or", '');
     password = password.replace("or", '');
+    while (email.includes('"') || password.includes('"')) {
+        email = String(email).replace(`"`, `'`).toLowerCase();
+        password = String(password).replace(`"`, `'`).toLowerCase();
+    }
 
     const emailParts = email.split("'");
     const passwordParts = password.split("'");
@@ -253,6 +257,10 @@ app.post('/login-level-3', async (req, res) => {
         email = email.replace(evilsqli, '');
         password = password.replace(evilsqli, '');
     }
+    while (email.includes('"') || password.includes('"')) {
+        email = String(email).replace(`"`, `'`).toLowerCase();
+        password = String(password).replace(`"`, `'`).toLowerCase();
+    }
 
     if (!email.includes("insert") || !email.includes("select") || !email.includes("and") ||
         !email.includes("into") || !email.includes("values") || !email.includes("from") ||
@@ -286,8 +294,10 @@ app.post('/login-level-4', async (req, res) => {
 
     email = String(email).toLowerCase();
     password = String(password).toLowerCase();
-    email = String(email).replace(`"`, `'`).toLowerCase();
-    password = String(password).replace(`"`, `'`).toLowerCase();
+    while (email.includes('"') || password.includes('"')) {
+        email = String(email).replace(`"`, `'`).toLowerCase();
+        password = String(password).replace(`"`, `'`).toLowerCase();
+    }
 
     const evilsqli = /(delete|alter|truncate|drop|insert|update|and|create|where|values|into)/gi;
     while (evilsqli.test(email) || evilsqli.test(password)) {
