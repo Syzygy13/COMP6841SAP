@@ -10,7 +10,7 @@ form.forEach((item, i) => {
 const returnBtn = document.querySelector('.return-btn');
 
 returnBtn.onclick = () => {
-    location.href = '/COMP6841SAP/LoginTest/public/index.html';
+    location.href = 'index.html';
 }
 
 // form validation
