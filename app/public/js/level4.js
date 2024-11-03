@@ -1,4 +1,3 @@
-// form loading animation
 const form = [...document.querySelector('.form').children];
 
 form.forEach((item, i) => {
@@ -13,7 +12,6 @@ returnBtn.onclick = () => {
     location.href = 'index.html';
 }
 
-// form validation
 const username = document.querySelector('.name') || null;
 const email = document.querySelector('.email');
 const password = document.querySelector('.password');
@@ -54,15 +52,13 @@ const alertBox = (data) => {
     }, 5000);
 }
 
-// Dropdown functionality
 const dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdownContent = document.querySelector('.dropdown-content');
 
 dropdownBtn.onclick = () => {
-    dropdownContent.classList.toggle('show'); // Toggle the dropdown menu
+    dropdownContent.classList.toggle('show');
 };
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = (event) => {
     if (!event.target.closest('.dropdown-btn') && !event.target.closest('dropdown-content')) {
         dropdownContent.classList.remove('show');

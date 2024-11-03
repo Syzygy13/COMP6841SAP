@@ -1,4 +1,3 @@
-// form loading animation
 const form = [...document.querySelector('.study').children];
 
 form.forEach((item, i) => {

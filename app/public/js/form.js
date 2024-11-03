@@ -1,4 +1,3 @@
-// form loading animation
 const form = [...document.querySelector('.form').children];
 
 form.forEach((item, i) => {
@@ -13,13 +12,12 @@ window.onload = () => {
     }
 }
 
-// form validation
 const username = document.querySelector('.name') || null;
 const email = document.querySelector('.email');
 const password = document.querySelector('.password');
 const submitBtn = document.querySelector('.submit-btn');
 
-if (username == null) { // means login page is online
+if (username == null) {
     submitBtn.addEventListener('click', () => {
         fetch('/login-user', {
             method: 'post',
