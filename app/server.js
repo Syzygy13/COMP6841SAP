@@ -167,7 +167,7 @@ app.post('/login-level-1', async (req, res) => {
             }
         } catch (error) {
             console.error("Database error:", error);
-            res.status(500).json("One or more of the SQL commands are used incorrectly.");
+            res.status(500).json(`SELECT email, password FROM level1 WHERE email = '${email}' AND password = '${password}'`);
         }
     }
 });
@@ -237,7 +237,7 @@ app.post('/login-level-2', async (req, res) => {
             }
         } catch (error) {
             console.error("Database error:", error);
-            res.status(500).json("One or more of the SQL commands are used incorrectly.");
+            res.status(500).json(`SELECT email, password FROM level1 WHERE email = '${email}' AND password = '${password}'`);
         }
     }
 });
@@ -276,7 +276,7 @@ app.post('/login-level-3', async (req, res) => {
         }
     } catch (error) {
         console.error("Database error:", error);
-        res.status(500).json("One or more of the SQL commands are used incorrectly.");
+        res.status(500).json(`SELECT email, password FROM level1 WHERE email = '${email}' AND password = '${password}'`);
     }
     
 });
@@ -334,7 +334,7 @@ app.post('/login-level-4', async (req, res) => {
             }
         } catch(error) {
             console.error("Database error:", error);
-            res.status(500).json("One or more of the SQL commands are used incorrectly.");
+            res.status(500).json(`SELECT email, password FROM level1 WHERE email = '${email}' AND password = '${password}'`);
         }
     }
 });
