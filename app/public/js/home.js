@@ -2,7 +2,7 @@ const greeting = document.querySelector('.greeting');
 
 window.onload = () => {
     if (!sessionStorage.email) {
-        location.href = '/COMP6841SAP/LoginTest/public/login.html';
+        location.href = 'login.html';
     } else {
         greeting.innerHTML= `welcome`;
     }
@@ -12,7 +12,7 @@ const logOut = document.querySelector('.logout');
 
 logOut.onclick = () => {
     sessionStorage.clear();
-    location.href = '/COMP6841SAP/LoginTest/public/login.html'
+    location.href = 'login.html'
 }
 
 // Dropdown functionality
