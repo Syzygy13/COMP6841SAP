@@ -112,7 +112,7 @@ app.post('/login-user', (req, res) => {
 
     const hash = crypto.createHash('sha256').update(password).digest('hex');
 
-    db.select('username', 'email', 'password', 'salt')
+    db.select('username', 'email')
     .from("users")
     .where({
         email: email,
