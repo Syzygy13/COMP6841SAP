@@ -15,6 +15,17 @@ const db = knex({
 
 const app = express();
 
+const crypto = require('crypto');
+
+function hashPassword(password, salt) {
+    return crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+}
+
+function verifyPassword(inputPassword, hashedPassword, salt) {
+    const inputHash = hashPassword(inputPassword, salt);
+    return inputHash === hashedPassword;
+}
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -70,6 +81,8 @@ app.get('/level4', (req, res) => {
 
 app.post('/register-user', (req, res) => {
     const { username, email, password } = req.body;
+    const salt = crypto.randomBytes(16).toString('hex');
+    const hashedPassword = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
 
     if (!username.length || !email.length || !password.length) {
         res.json('fill all the fields');
@@ -77,7 +90,8 @@ app.post('/register-user', (req, res) => {
         db("users").insert({
             username: username,
             email: email,
-            password: password
+            password: hashedPassword,
+            salt:salt,
         })
         .returning(["username", "email"])
         .then(data => {
@@ -93,7 +107,7 @@ app.post('/register-user', (req, res) => {
 app.post('/login-user', (req, res) => {
     const { email, password } = req.body;
 
-    db.select('username', 'email')
+    db.select('username', 'email', 'password', 'salt')
     .from("users")
     .where({
         email: email,
@@ -101,7 +115,22 @@ app.post('/login-user', (req, res) => {
     })
     .then(data => {
         if (data.length) {
-            res.json(data[0]);
+            const { password: storedHashedPassword, salt } = data[0]; // Get the hashed password and salt from the database
+
+            // Hash the input password using the stored salt
+            const inputHashedPassword = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+
+            // Check if the hashed input password matches the stored hashed password
+            if (inputHashedPassword === storedHashedPassword) {
+                // Passwords match
+                res.json({
+                    username: data[0].username,
+                    email: data[0].email
+                });
+            } else {
+                // Passwords don't match
+                res.json('email or password is incorrect');
+            }
         } else {
             res.json('email or password is incorrect');
         }
