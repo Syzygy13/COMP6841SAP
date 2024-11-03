@@ -39,7 +39,7 @@ const validateData = (data) => {
         alertBox(data);
     } else {
         sessionStorage.email = data;
-        location.href = '/COMP6841SAP/LoginTest/public/index.html';
+        location.href = 'index.html';
     }
 }
 
