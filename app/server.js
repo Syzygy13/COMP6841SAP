@@ -113,6 +113,8 @@ app.post('/login-level-1', async (req, res) => {
 
     email = String(email).replace(/\s*/g, '').toLowerCase();
     password = String(password).replace(/\s*/g, '').toLowerCase();
+    email = String(email).replace(`"`, `'`).toLowerCase();
+    password = String(password).replace(`"`, `'`).toLowerCase();
 
     const emailParts = email.split("'");
     const passwordParts = password.split("'");
@@ -179,6 +181,8 @@ app.post('/login-level-2', async (req, res) => {
     const allowed = "'or'1'='1'--";
     email = String(email).replace(/\s*/g, '').toLowerCase();
     password = String(password).replace(/\s*/g, '').toLowerCase();
+    email = String(email).replace(`"`, `'`).toLowerCase();
+    password = String(password).replace(`"`, `'`).toLowerCase();
     email = email.replace("or", '');
     password = password.replace("or", '');
 
@@ -285,6 +289,8 @@ app.post('/login-level-4', async (req, res) => {
 
     email = String(email).toLowerCase();
     password = String(password).toLowerCase();
+    email = String(email).replace(`"`, `'`).toLowerCase();
+    password = String(password).replace(`"`, `'`).toLowerCase();
 
     const evilsqli = /(delete|alter|truncate|drop|insert|update|and|create|where|values|into)/gi;
     while (evilsqli.test(email) || evilsqli.test(password)) {
@@ -294,11 +300,6 @@ app.post('/login-level-4', async (req, res) => {
 
     if (!email.includes("union") || !email.includes("select") || !email.includes("from")) {
         res.json("one or more required SQL commands are missing");
-        return;
-    }
-
-    if (email.includes(`"`) || password.includes(`"`)) {
-        res.json('email or password contains "');
         return;
     }
 
