@@ -122,10 +122,10 @@ app.post('/login-level-1', async (req, res) => {
         res.json("invalid input");
         return;
     }
-    const isEmailValid = (emailParts[2] = emailParts[4]) && emailParts[1].includes("or")
-        && emailParts[3].includes("=") && emailParts[5].includes("--");
-    const isPasswordValid = (passwordParts[2] = passwordParts[4]) && passwordParts[1].includes("or")
-        && passwordParts[3].includes("=") && passwordParts[5].includes("--");
+    const isEmailValid = (emailParts[2] = emailParts[4]) && emailParts[1] === "or"
+        && emailParts[3] === "=" && emailParts[5] === "--";
+    const isPasswordValid = (passwordParts[2] = passwordParts[4]) && passwordParts[1] === "or"
+        && passwordParts[3] === "=" && passwordParts[5] === "--";
 
     if (isEmailValid) {
         const query = `SELECT email, password FROM level1 WHERE email = '${email}'`;
@@ -192,10 +192,10 @@ app.post('/login-level-2', async (req, res) => {
         res.json("invalid input");
         return;
     }
-    const isEmailValid = (emailParts[2] = emailParts[4]) && emailParts[1].includes("or")
-        && emailParts[3].includes("=") && emailParts[5].includes("--");
-    const isPasswordValid = (passwordParts[2] = passwordParts[4]) && passwordParts[1].includes("or")
-        && passwordParts[3].includes("=") && passwordParts[5].includes("--");
+    const isEmailValid = (emailParts[2] = emailParts[4]) && emailParts[1] === "or"
+        && emailParts[3] === "=" && emailParts[5] === "--";
+    const isPasswordValid = (passwordParts[2] = passwordParts[4]) && passwordParts[1] === "or"
+        && passwordParts[3] === "=" && passwordParts[5] === "--";
 
     if (isEmailValid) {
         const query = `SELECT email, password FROM level1 WHERE email = '${email}'`;
