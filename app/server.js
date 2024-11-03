@@ -30,47 +30,38 @@ app.get('/login', (req, res) => {
 
 app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'register.html'));
-    console.log(initialPath)
 });
 
 app.get('/learning1', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'learning1.html'));
-    console.log(initialPath)
 });
 
 app.get('/learning2', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'learning2.html'));
-    console.log(initialPath)
 });
 
 app.get('/learning3', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'learning3.html'));
-    console.log(initialPath)
 });
 
 app.get('/learning4', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'learning4.html'));
-    console.log(initialPath)
 });
 
 app.get('/learning5', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'learning5.html'));
-    console.log(initialPath)
 });
 
 app.get('/level1', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'level1.html'));
-    console.log(initialPath)
 });
 
 app.get('/level2', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'level2.html'));
-    console.log(initialPath)
 });
 
 app.get('/level3', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'level3.html'));
-    console.log(initialPath)
 });
 
 app.get('/level4', (req, res) => {
