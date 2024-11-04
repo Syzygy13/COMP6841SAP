@@ -329,7 +329,7 @@ app.post('/login-level-4', async (req, res) => {
         return;
     }
 
-    const allowed = `'union select username,password from hidden--`;
+    const allowed = `'union select email,password from hidden--`;
 
     if (email == allowed) {
         const query = `SELECT email, password FROM level1 WHERE email = '${email}'`;
