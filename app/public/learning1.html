@@ -12,18 +12,21 @@
     <div class="study">
         <button class="return-btn">Back home</button>
         <h1 class="heading">Tautology Attacks</h1>
-        <div class="text">Tautology in logic means a statement that is true based on its logical structure. In SQL injections, an example is '1' = '1', which is always true because it compares two identical values.<br></div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
+        <div class="text">Tautology in logic means a statement that is true based on its logical structure. In SQL injections, an example is '1' = '1', which is always true because it compares two identical values.</div>
+        <br><br>
+        <div class="text">On a login page, a tautology statement cannot run alone. The previous statement must be closed properly.</div>
+        <br><br>
+        <div class="text">SELECT * FROM users WHERE username='input1' AND password='input2';</div>
+        <br><br>
+        <div class="text">If you use '1' = '1' alone, it breaks the syntax. To make it work, you can use ' OR '1' = '1' --.</div>
+        <br><br>
+        <div class="text">' OR '1' = '1' -- closes the original WHERE condition and adds the OR '1' = '1', which is always true.</div>
+        <br><br>
+        <div class="text">Everything after -- is treated as a comment and ignored, making the password irrelevant and granting access.</div>
+        <br><br>
+        <div class="text">Tautology attacks often target WHERE clauses, which are common in login queries that search for matching accounts.</div>
+        <br><br>
+        <div class="text">To defend use parameterised queries or restrict inputs to not include single-quotes</div>
         <button class="next-btn">Next topic</button>
     </div>
 
