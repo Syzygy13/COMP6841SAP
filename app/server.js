@@ -17,15 +17,6 @@ const app = express();
 
 const crypto = require('crypto');
 
-function hashPassword(password, salt) {
-    return crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
-}
-
-function verifyPassword(inputPassword, hashedPassword, salt) {
-    const inputHash = hashPassword(inputPassword, salt);
-    return inputHash === hashedPassword;
-}
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
