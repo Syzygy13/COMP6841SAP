@@ -324,12 +324,12 @@ app.post('/login-level-4', async (req, res) => {
         password = password.replace(evilsqli, '');
     }
 
-    if (!email.includes("union") || !email.includes("select") || !email.includes("from")) {
+    if (!email.includes("union") || !email.includes("select") || !email.includes("from") || !email.includes("hidden")) {
         res.json("one or more required SQL commands are missing");
         return;
     }
 
-    const allowed = `'union select email,password from level1--`;
+    const allowed = `'union select email,password from hidden--`;
 
     if (email == allowed) {
         const query = `SELECT email, password FROM level1 WHERE email = '${email}'`;
