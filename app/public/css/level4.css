@@ -161,3 +161,7 @@ input:focus::placeholder {
     text-decoration: none;
     display: block;
 }
+
+.hidden {
+    visibility: hidden;
+}
