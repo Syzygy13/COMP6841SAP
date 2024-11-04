@@ -329,6 +329,7 @@ app.post('/login-level-4', async (req, res) => {
         return;
     }
 
+    // table is called hidden
     const allowed = `'union select email,password from hidden--`;
 
     if (email == allowed) {
