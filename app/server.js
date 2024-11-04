@@ -246,9 +246,6 @@ app.post('/login-level-2', async (req, res) => {
             password = password.replace(evilsqli, '');
         }
 
-        email = email.replace(/[^a-zA-Z0-9]/g, '');
-        password = password.replace(/[^a-zA-Z0-9]/g, '');
-
         try {
             const query = `SELECT email, password FROM level1 WHERE email = '${email}' AND password = '${password}'`;
             const data = await db.raw(query);
