@@ -12,18 +12,27 @@
     <div class="study">
         <button class="return-btn">Go back</button>
         <h1 class="heading">Blind SQL Injection Attacks</h1>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
+        <div class="text">Blind SQL injection is a method where an attacker asks true or false questions to the database to infer information. Similar to 20 Questions.</div>
+        <br><br>
+        <div class="text">This attack works by manipulating queries to see different responses based on true or false conditions.</div>
+        <br><br>
+        <div class="text">SELECT * FROM users WHERE username = '$username' AND password = '$password';</div>
+        <br><br>
+        <div class="text">The attacker can close the original query and inject their own to check conditions.</div>
+        <br><br>
+        <div class="text">For instance, they can use SUBSTRING to guess the password character by character without revealing errors.</div>
+        <br><br>
+        <div class="text">Data extraction will occur one at a time making this a very tedious process.</div>
+        <br><br>
+        <div class="text">Having no information from the beginning makes this purely a guessing game to even get started.</div>
+        <br><br>
+        <div class="text">To defend:</div>
+        <br><br>
+        <div class="text">Use parameterised queries to prevent most injections.</div>
+        <br><br>
+        <div class="text">Manually sanitise user inputs to remove harmful characters/statements.</div>
+        <br><br>
+        <div class="text">Do not expose error handling or detailed error messages to outsiders.</div>
         <button class="next-btn">Back home</button>
     </div>
 

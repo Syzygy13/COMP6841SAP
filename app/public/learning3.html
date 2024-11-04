@@ -12,18 +12,28 @@
     <div class="study">
         <button class="return-btn">Previous Topic</button>
         <h1 class="heading">Piggy-Backed Attacks</h1>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
+        <div class="text">Piggy-backed attacks are similar to UNION query attacks. They use a delimiter to end a legitimate query and then add malicious commands.</div>
+        <br><br>
+        <div class="text">Any additional SQL statements that follow the original query will be executed. Attackers can use multiple SQL command words to complete the injection.</div>
+        <br><br>
+        <div class="text">'; DELETE FROM users WHERE '2' = '2'; SELECT * FROM users; --</div>
+        <br><br>
+        <div class="text">The delimiter ';' ends the initial query early.</div>
+        <br><br>
+        <div class="text">DELETE FROM users WHERE '2' = '2'; command deletes all records in the users table because the condition '2' = '2' is always true.</div>
+        <br><br>
+        <div class="text">SELECT * FROM users; command attempts to retrieve everything from the users table. It should find nothing.</div>
+        <br><br>
+        <div class="text">The -- at the end comments out the rest of the original SQL query.</div>
+        <br><br>
+        <div class="text">To defend:</div>
+        <br><br>
+        <div class="text">Parameterised queries are the most effective defense. By this point you can see they are used almost everywhere.</div>
+        <br><br>
+        <div class="text">Developers can manually sanitise inputs use to filter out dangerous commands.</div>
+        <br><br>
+        <div class="text">Disabling multiple queries in the database can block anything after the delimiter.</div>
+        <br><br>
         <button class="next-btn">Next topic</button>
     </div>
 

@@ -12,18 +12,25 @@
     <div class="study">
         <button class="return-btn">Previous Topic</button>
         <h1 class="heading">Timing Attacks</h1>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
+        <div class="text">Timing attacks exploit the time it takes for a system to process inputs.</div>
+        <br><br>
+        <div class="text">Attackers gain information when a successful query takes longer to execute than an unsuccessful one.</div>
+        <br><br>
+        <div class="text">These are commonly found in: Password checks and Any program that takes a long time to compute.</div>
+        <br><br>
+        <div class="text">' OR IF(SUBSTRING(password, 1, 1) = 's', SLEEP(5), 0) --</div>
+        <br><br>
+        <div class="text">This input checks if the first character of the password is 's'.</div>
+        <br><br>
+        <div class="text">If it is, the program sleeps for 5 seconds, indicating a correct guess.</div>
+        <br><br>
+        <div class="text">If not, the operation runs normally with no delay.</div>
+        <br><br>
+        <div class="text">This is much trickier to defend against however:</div>
+        <br><br>
+        <div class="text">Developers can implement identical time comparisons for all operations using wait functions.</div>
+        <br><br>
+        <div class="text">This helps ensure that both successful and unsuccessful operations take the same amount of time to complete.</div>
         <button class="next-btn">Next topic</button>
     </div>
 

@@ -12,18 +12,25 @@
     <div class="study">
         <button class="return-btn">Previous Topic</button>
         <h1 class="heading">Union Queries Attacks</h1>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
-        <div class="text">text</div>
+        <div class="text">UNION attacks use the UNION SQL command to access the same or a different table. Attackers often target other tables they have information on, such as attributes, size, or existing content.</div>
+        <br><br>
+        <div class="text">To execute this attack, the injected statement must first stop the original query, similar to the tautology attack.</div>
+        <br><br>
+        <div class="text">' UNION SELECT attribute1, attribute2 FROM table_name -- </div>
+        <br><br>
+        <div class="text">The UNION keyword combines two queries, executing the developer's original query first and then the attacker's injected query.</div>
+        <br><br>
+        <div class="text">The number of columns in both queries must match. If the original query has two columns, the attacker's query must have two as well.</div>
+        <br><br>
+        <div class="text">The data types in the columns must be compatible with what the developer originally specified.</div>
+        <br><br>
+        <div class="text">To defend:</div>
+        <br><br>
+        <div class="text">Parameterised queries are highly effective as they restrict user inputs.</div>
+        <br><br>
+        <div class="text">Manually sanitising inputs, such as removing instances of the UNION keyword also helps.</div>
+        <br><br>
+        <div class="text">Limit error messages to prevent attackers from gathering useful information.</div>
         <button class="next-btn">Next topic</button>
     </div>
 
